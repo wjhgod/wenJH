@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+    <style>
+       .a2 {
+    background-color: #F1EFC7;
+    color: #000000;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: #666 0px 0px 6px;
+}
+.a2:active{
+    background-color: #bdbc9d;
+} 
+audio{
+    display: none;
+}
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <title> 小熊，生日快乐哦！</title>
+    <link rel="icon" href="./images/favicon.ico">
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/garden.js"></script>
+    <script src="./js/functions.js"></script>
+</head>
+<style>
+    body,button,input,textarea{font-family:"微软雅黑",sans-serif}a{text-decoration:none;}
+body{margin:0;padding:0;background:#FBDBEF;font-size:12px;overflow:auto}#mainDiv{width:100%;height:100%}#loveHeart{float:left;width:670px;height:625px}#garden{width:100%;height:100%}#elapseClock{text-align:right;font-size:18px;margin-top:10px;margin-bottom:10px}#words{font-family:"微软雅黑";width:500px;font-size:24px;color:#666}#messages{margin-top:80px;margin-left:80px;display:none}#elapseClock .digit{font-family:"digit";font-size:36px}#loveu{padding:5px;font-size:22px;margin-top:55px;margin-left:80px;text-align:text;display:none}#loveu .signature{margin-top:10px;font-size:20px;font-style:italic}#clickSound{display:none}#code{float:left;width:480px;height:480px;color:#333;font-family:"微软雅黑";font-size:18px;line-height:26px;}#code .string{color:#2a36ff}#code .keyword{color:#7f0055;font-weight:bold}#code .space{margin-left:7px}#code .comments{color:#F180C5}#copyright{margin-top:10px;text-align:center;width:100%;color:#F180C5}#errorMsg{width:100%;text-align:center;font-size:24px;position:absolute;top:100px;left:0}#copyright a{color:#F180C5}.bb{display:block;text-align:center;padding-lef:100px;font-size:40px;color:#F180C5}#yyxz{position: fixed;bottom: 6.8em;left:8%;z-index:9999;}
+body{background: url(../images/houtaibizhi.jpg);}
+.play-button {
+    background: linear-gradient(45deg, #ff00cc, #3333ff);
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 3px 0px #ff33cc;
+    transition: all 0.3s ease;
+  }
+  .play-button:active {
+    box-shadow: none;
+    transform: translateY(3px);
+  }
+  .play-button:hover {
+    background: linear-gradient(45deg, #3333ff, #ff00cc);
+    box-shadow: 0px 3px 0px #ff33cc;
+  }
+  .link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #ff69b4; /* Dreamy color */
+    color: #fff; /* White text color for contrast */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); /* Adding a box shadow for a 3D effect */
+  }
+  .link-button:hover {
+    background-color: #ff1493; /* Lighter color on hover for a dreamy effect */
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.6); /* Adjusting the box shadow on hover */
+  }
+</style>
+<body>
+    <audio id="music" src="./mp3/borthdaymusic.mp3" preload="auto" autoplay></audio>
+    <button class="play-button" onclick="toggleMusic()">点击播放音乐</button>
+<div id="mainDiv">
+    <div id="content">
+        <div id="code">
+            <h2><span class="comments">小熊：</span><br/></h2>
+            <span class="comments">在你生日到来之际，制作了这份特别的礼物送给你</span><br/>
+            <span class="comments">希望往后的每一天</span><br/><br/>
+            <span class="comments">你被快乐追逐，被好运追捕，被微笑困住</span><br/>
+            <span class="comments">送你一个生日蛋糕，祝你生日快乐！</span><br/>
+            <span class="comments">第一层，祝福！第二层，快乐！</span><br/>
+            <span class="comments">第三层，浪漫！第四层，永远吃不胖！</span><br/>
+            <span class="comments">中间夹层祝你天天都有一份好心情！</span><br/>
+            <br>
+            <span class="comments">最后！！！</span><br/>
+            <br><br>
+            <span class="comments"><a href="./video/ee20254476d05de4ca4de21ca97fb82c.mp4" class="link-button">请点击这里</a></span>
+        </div>
+        <div id="loveHeart">
+            <canvas id="garden"></canvas>
+            <div id="words">
+                <div id="messages">
+                    <img src="./images/zsr.png">
+                </div>
+                <div id="loveu">
+                    <img src="./images/sr.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </center>
+    </div>
+</div>
+<script>
+    var music = document.getElementById('music');
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+<script type="text/javascript">
+    var offsetX = $("#loveHeart").width() / 2;
+    var offsetY = $("#loveHeart").height() / 2 - 55;
+    var together = new Date();
+    together.setHours(8);
+    together.setMinutes(0);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
+
+    if (!document.createElement('canvas').getContext) {
+        var msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML = "您的浏览器已经过时!请使用非IE浏览器进行预览";
+        document.body.appendChild(msg);
+        $("#code").css("display", "none")
+        $("#copyright").css("position", "absolute");
+        $("#copyright").css("bottom", "10px");
+        document.execCommand("stop");
+    } else {
+        setTimeout(function () {
+            startHeartAnimation();
+        }, 5000);
+
+        timeElapse(together);
+        setInterval(function () {
+            timeElapse(together);
+        }, 500);
+
+        adjustCodePosition();
+        $("#code").typewriter();
+    }
+</script>
+</div>
+
+
+</body>
+</html>
